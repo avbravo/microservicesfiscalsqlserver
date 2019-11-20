@@ -29,7 +29,7 @@ public class SQLServerProducer {
         Connection connectionClient=null;
         try {
               Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "12345aA-bB");
+            connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "controljav180denver$");
 
         } catch (Exception e) {
             JsfUtil.errorMessage("conecction() "+e.getLocalizedMessage());

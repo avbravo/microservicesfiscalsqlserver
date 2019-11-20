@@ -14,6 +14,7 @@ public class JAXRSConfiguration extends Application {
     public Set<Class<?>> getClasses() {
         Set<Class<?>> resources = new java.util.HashSet<>();
         resources.add(com.avbravo.microservicesfiscalsqlserver.resources.FacturaResources.class);
+        resources.add(com.avbravo.microservicesfiscalsqlserver.resources.JavaEE8Resource.class);
        
              return resources;
     }

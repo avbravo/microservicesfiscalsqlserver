@@ -20,12 +20,12 @@ import javax.ws.rs.core.Response;
 @Path("javaee8")
 public class JavaEE8Resource {
 
-    @GET
-    public Response ping() {
-        return Response
-                .ok("ping")
-                .build();
-    }
+//    @GET
+//    public Response ping() {
+//        return Response
+//                .ok("ping")
+//                .build();
+//    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -40,7 +40,7 @@ public class JavaEE8Resource {
         List<Factura> l = new ArrayList<>();
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "12345aA-bB");
+            Connection conn = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "controljav180denver$");
             Statement sta = conn.createStatement();
             String jdbcJtdsSql = "SELECT * FROM factura";
             ResultSet rs = sta.executeQuery(jdbcJtdsSql);
@@ -55,6 +55,7 @@ public class JavaEE8Resource {
 //                System.out.println("id: " + id + ", name: " + name + ", quantity: " + quantity);
             }
         } catch (Exception e) {
+            System.out.println("Error()"+e.getLocalizedMessage());
         }
         return l;
     }
