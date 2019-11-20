@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -41,6 +42,33 @@ public class FacturaRepository extends Repository<Factura> {
     @Override
     public Object find(String key, Object value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    public Optional<Factura> findBy(String key, Object value) {
+        List<Factura> list = new ArrayList<>();
+       // Factura factura = new Factura();
+          
+       try {
+          
+           
+            Statement sta = getStatement();
+            String jdbcJtdsSql = "SELECT * FROM factura where '"+key+"' = '"+value +"'";
+            ResultSet rs = sta.executeQuery(jdbcJtdsSql);
+            rs = sta.executeQuery(jdbcJtdsSql);
+            while (rs.next()) {
+                Integer idfactura = rs.getInt("idfactura");
+              //  String name = rs.getString("fecha");
+                int estado = rs.getInt("estado");
+                Factura factura = new Factura(idfactura, estado);
+                 return Optional.of(factura);
+                //r
+//                System.out.println("id: " + id + ", name: " + name + ", quantity: " + quantity);
+            }
+       } catch (Exception e) {
+           JsfUtil.errorDialog("findAll()", e.getLocalizedMessage());
+       }
+       return Optional.empty();
     }
 
    public List<Factura> findAll(){

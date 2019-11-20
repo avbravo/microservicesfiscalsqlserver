@@ -18,6 +18,11 @@ public class Factura {
         this.estado = estado;
     }
 
+    public Factura() {
+    }
+
+    
+    
     public Integer getIdfactura() {
         return idfactura;
     }
