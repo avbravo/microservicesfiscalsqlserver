@@ -7,7 +7,7 @@ package com.avbravo.microservicesfiscalsqlserver.repository;
 
 import com.avbravo.jmoordbutils.JsfUtil;
 import com.avbravo.microservicesfiscalsqlserver.database.Factura;
-import com.avbravo.microservicesfiscalsqlserver.provider.SQLServerClientProvider;
+
 import com.avbravo.sqlserverapi.Repository;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,14 +26,7 @@ import javax.inject.Inject;
 @Stateless
 public class FacturaRepository extends Repository<Factura> {
 
-    @Inject
-    SQLServerClientProvider sqlServerClientProvider;
-
- 
- 
-    protected Connection getConnectionClient() { 
-        return sqlServerClientProvider.getConnectionClient();
-    }
+   
 
     public FacturaRepository() {
         super(Factura.class,"database");

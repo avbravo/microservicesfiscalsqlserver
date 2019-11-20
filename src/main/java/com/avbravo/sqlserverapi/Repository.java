@@ -10,11 +10,8 @@ package com.avbravo.sqlserverapi;
 import com.avbravo.jmoordbutils.JsfUtil;
 import java.sql.Connection;
 import java.sql.Statement;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 // </editor-fold>
 
@@ -28,7 +25,7 @@ public abstract class Repository<T> implements InterfaceRepository {
 //invoca el @JmoordbProducer que tiene un metodo MongoClient mongoClient
 
     @Inject
-    Connection connectionClient;
+   Connection connection;
 
     Integer contador = 0;
     String database;
@@ -76,7 +73,7 @@ public abstract class Repository<T> implements InterfaceRepository {
     @Override
     public Statement getStatement() {
         try {
-            Statement sta = connectionClient.createStatement();
+            Statement sta = connection.createStatement();
 
             if (sta == null) {
                 //Test.msg("+++AbstractFacade.getMonogDatabase() == null");
