@@ -1,6 +1,6 @@
 package com.avbravo.microservicesfiscalsqlserver.resources;
 
-import com.avbravo.microservicesfiscalsqlserver.database.Factura;
+import com.avbravo.microservicesfiscalsqlserver.entity.Factura;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

@@ -6,7 +6,7 @@
 package com.avbravo.microservicesfiscalsqlserver.resources;
 
 
-import com.avbravo.microservicesfiscalsqlserver.database.Factura;
+import com.avbravo.microservicesfiscalsqlserver.entity.Factura;
 import com.avbravo.microservicesfiscalsqlserver.repository.FacturaRepository;
 import java.util.List;
 import java.util.Optional;
