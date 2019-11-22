@@ -22,15 +22,18 @@ import javax.inject.Singleton;
 @Singleton
 @ConcurrencyManagement(ConcurrencyManagementType.CONTAINER)
 public class SQLServerProducer {
-
+ Connection connectionClient=null;
     @Produces
     @ApplicationScoped
     public Connection connection() {
-        Connection connectionClient=null;
+      
         try {
-              Class.forName("net.sourceforge.jtds.jdbc.Driver");
+             if( connectionClient==null){
+                   Class.forName("net.sourceforge.jtds.jdbc.Driver");
             connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "controljav180denver$");
 
+             }
+            
         } catch (Exception e) {
             JsfUtil.errorMessage("conecction() "+e.getLocalizedMessage());
         }

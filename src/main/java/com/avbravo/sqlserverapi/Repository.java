@@ -69,7 +69,7 @@ public abstract class Repository<T> implements InterfaceRepository {
     
     
     
-// <editor-fold defaultstate="collapsed" desc="getMongoDatabase()">
+// <editor-fold defaultstate="collapsed" desc="Statement getStatement()">
     @Override
     public Statement getStatement() {
         try {
