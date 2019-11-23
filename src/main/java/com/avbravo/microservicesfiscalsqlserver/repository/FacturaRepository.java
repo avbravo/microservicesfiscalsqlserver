@@ -87,5 +87,25 @@ public class FacturaRepository extends Repository<Factura> {
        }
        return list;
    }
+   public Boolean insert(Factura factura){
+     Boolean saved=false;
+          
+       try {
+           
+            Statement stmt = getStatement();
+            String sql = "INSERT INTO factura " +
+                   "VALUES ("+factura.getIdfactura()+","+factura.getEstado()+")";
+   if(stmt.executeUpdate(sql) >0){
+       saved=true;
+   }
+      
+       } catch (Exception e) {
+           JsfUtil.errorDialog("findAll()", e.getLocalizedMessage());
+       }
+       return saved;
+   }
+   
+   
+   
 
 }
