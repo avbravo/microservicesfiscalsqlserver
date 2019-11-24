@@ -54,10 +54,10 @@ public class FacturaResources {
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Factura> findAll() {
-        List<Factura> list = facturaRepository.findAll();
-        list.forEach((p) -> {
-            System.out.println("" + p.getIdfactura());
-        });
+//        List<Factura> list = facturaRepository.findAll();
+//        list.forEach((p) -> {
+//            System.out.println("" + p.getIdfactura());
+//        });
         return facturaRepository.findAll();
     }
 
