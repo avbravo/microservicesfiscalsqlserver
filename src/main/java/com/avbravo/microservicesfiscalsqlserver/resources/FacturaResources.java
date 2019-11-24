@@ -7,6 +7,8 @@ package com.avbravo.microservicesfiscalsqlserver.resources;
 
 import com.avbravo.microservicesfiscalsqlserver.entity.Factura;
 import com.avbravo.microservicesfiscalsqlserver.repository.FacturaRepository;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 import javax.ejb.Stateless;
@@ -60,9 +62,9 @@ public class FacturaResources {
     }
 
     @POST
-    @Path("/factura/addjson")
+    @Path("/factura/add")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addFactura(Factura factura) {
+    public void facturaadd(Factura factura) {
         System.out.println(factura.getIdfactura() + factura.getEstado());
     }
 
@@ -74,5 +76,21 @@ public class FacturaResources {
         facturaRepository.insert(new Factura(idfactura, estado));
         return Response.ok().build();
 
+    }
+
+    @POST
+    @Path("/create")
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML)
+    public Response create(Factura f) throws URISyntaxException {
+        if (f == null) {
+            return Response.status(400).entity("Please add employee details !!").build();
+        }
+
+        if (f.getIdfactura() == null) {
+            return Response.status(400).entity("Please provide the employee name !!").build();
+        }
+
+        return Response.created(new URI("/resources/facturas/" + f.getIdfactura())).build();
     }
 }
