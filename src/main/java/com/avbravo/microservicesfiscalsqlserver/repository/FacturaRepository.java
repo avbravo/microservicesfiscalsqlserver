@@ -44,9 +44,11 @@ public class FacturaRepository extends Repository<Factura> {
           
        try {
           
-           
+           System.out.println("findBy()=>key :"+key + "value: "+value);
+    
             Statement sta = getStatement();
-            String jdbcJtdsSql = "SELECT * FROM factura where '"+key+"' = '"+value +"'";
+            String jdbcJtdsSql = "SELECT * FROM factura where "+key+" = "+value +"";
+                   System.out.println("sql "+jdbcJtdsSql);
             ResultSet rs = sta.executeQuery(jdbcJtdsSql);
             rs = sta.executeQuery(jdbcJtdsSql);
             while (rs.next()) {
@@ -54,15 +56,46 @@ public class FacturaRepository extends Repository<Factura> {
               //  String name = rs.getString("fecha");
                 int estado = rs.getInt("estado");
                 Factura factura = new Factura(idfactura, estado);
+                System.out.println("--------------> se encontro esa factura");
                  return Optional.of(factura);
                 //r
 //                System.out.println("id: " + id + ", name: " + name + ", quantity: " + quantity);
             }
        } catch (Exception e) {
-           JsfUtil.errorDialog("findAll()", e.getLocalizedMessage());
+           System.out.println("findBy "+e.getLocalizedMessage());
+           JsfUtil.errorDialog("findBy()", e.getLocalizedMessage());
        }
+        System.out.println(">>>> no se encontro la factura");
        return Optional.empty();
     }
+    public Optional<Factura> findByIdfactura(Integer value) {
+        List<Factura> list = new ArrayList<>();
+       // Factura factura = new Factura();
+          
+       try {
+          
+            
+            Statement sta = getStatement();
+            String jdbcJtdsSql = "SELECT * FROM factura where idfactura="+value +"";
+        
+            ResultSet rs = sta.executeQuery(jdbcJtdsSql);
+            rs = sta.executeQuery(jdbcJtdsSql);
+            while (rs.next()) {
+                Integer idfactura = rs.getInt("idfactura");
+                int estado = rs.getInt("estado");
+                Factura factura = new Factura(idfactura, estado);
+                 return Optional.of(factura);
+                //r
+//                System.out.println("id: " + id + ", name: " + name + ", quantity: " + quantity);
+            }
+       } catch (Exception e) {
+           System.out.println("findBy "+e.getLocalizedMessage());
+
+       }
+        System.out.println(">>>> no se encontro la factura");
+       return Optional.empty();
+    }
+    
 
    public List<Factura> findAll(){
        List<Factura> list = new ArrayList<>();

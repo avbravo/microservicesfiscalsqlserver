@@ -54,43 +54,33 @@ public class FacturaResources {
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Factura> findAll() {
-//        List<Factura> list = facturaRepository.findAll();
-//        list.forEach((p) -> {
-//            System.out.println("" + p.getIdfactura());
-//        });
+
         return facturaRepository.findAll();
     }
 
+   
     @POST
     @Path("/factura/add")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void facturaadd(Factura factura) {
-        System.out.println(factura.getIdfactura() + factura.getEstado());
-    }
+    public Response createTrackInJSON(Factura factura) {
+        try {
 
-    @POST
-    @Path("/add")
-    @Produces("text/html")
-    public Response create(@FormParam("idfactura") Integer idfactura,
-            @FormParam("estado") Integer estado) {
-        facturaRepository.insert(new Factura(idfactura, estado));
-        return Response.ok().build();
+            Optional<Factura> optional = facturaRepository.findBy("idfactura", factura.getIdfactura());
 
-    }
+            if (optional.isPresent()) {
 
-    @POST
-    @Path("/create")
-    @Consumes(MediaType.APPLICATION_XML)
-    @Produces(MediaType.APPLICATION_XML)
-    public Response create(Factura f) throws URISyntaxException {
-        if (f == null) {
-            return Response.status(400).entity("Please add employee details !!").build();
+                return Response.status(400).entity("Existe una factura con ese id!").build();
+            }
+
+            if (facturaRepository.insert(factura)) {
+
+                return Response.status(201).entity("Se guardo la factura").build();
+            }
+//Response.ok().build();
+            return Response.status(400).entity("No se guardo la factura").build();
+        } catch (Exception e) {
+            return Response.status(400).entity("Ocurrio un error!!" + e.getLocalizedMessage()).build();
         }
 
-        if (f.getIdfactura() == null) {
-            return Response.status(400).entity("Please provide the employee name !!").build();
-        }
-
-        return Response.created(new URI("/resources/facturas/" + f.getIdfactura())).build();
     }
 }
