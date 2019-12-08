@@ -11,6 +11,7 @@ package com.avbravo.microservicesfiscalsqlserver.entity;
  */
 public class Factura {
     private Integer idfactura;
+    private String cliente;
     private Integer estado;
 
     public Factura(Integer idfactura, Integer estado) {
