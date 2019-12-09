@@ -3,30 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.microservicesfiscalsqlserver.tables;
+package com.avbravo.microservicesfiscalsqlserver.sql.tables;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author avbravo
  */
 
-public class Tpedidos implements Serializable {
+public class TPedidos implements Serializable {
 
     private static final long serialVersionUID = 1L;
    
@@ -283,7 +273,7 @@ public class Tpedidos implements Serializable {
     // @Column(name = "idDireccionDescarga")
     private Integer idDireccionDescarga;
     // @Column(name = "fechaEntregaReal")
-    @Temporal(TemporalType.TIMESTAMP)
+ 
     private Date fechaEntregaReal;
     // @Column(name = "importeInstalacion")
     private Double importeInstalacion;
@@ -332,7 +322,7 @@ public class Tpedidos implements Serializable {
     // @Column(name = "codeConditionPaiement")
     private String codeConditionPaiement;
 
-    public Tpedidos() {
+    public TPedidos() {
     }
 
     public String getZonaCliente() {

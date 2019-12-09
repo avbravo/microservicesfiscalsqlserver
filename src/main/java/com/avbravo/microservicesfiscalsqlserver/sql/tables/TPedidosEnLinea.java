@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.microservicesfiscalsqlserver.tables;
+package com.avbravo.microservicesfiscalsqlserver.sql.tables;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
  * @author avbravo
  */
 
-public class Tpedidosenlinea implements Serializable {
+public class TPedidosEnLinea implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -315,7 +315,7 @@ public class Tpedidosenlinea implements Serializable {
     // @Column(name = "codeConditionPaiement")
     private String codeConditionPaiement;
 
-    public Tpedidosenlinea() {
+    public TPedidosEnLinea() {
     }
 
     public String getReferencia() {

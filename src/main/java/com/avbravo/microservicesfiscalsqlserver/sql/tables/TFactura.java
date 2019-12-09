@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.microservicesfiscalsqlserver.tables;
+package com.avbravo.microservicesfiscalsqlserver.sql.tables;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.Size;
+
+
 
 /**
  *
  * @author avbravo
  */
 
-public class Tfactura implements Serializable {
+public class TFactura implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -26,7 +25,7 @@ public class Tfactura implements Serializable {
     // @Column(name = "codigo_cliente")
     private Integer codigoCliente;
     // @Column(name = "fecha_factura")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaFactura;
     
     // @Column(name = "forma_pago")
@@ -142,7 +141,7 @@ public class Tfactura implements Serializable {
     // @Column(name = "cuotaIVARectificada")
     private Double cuotaIVARectificada;
     // @Column(name = "fechaFacturaRectificada")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaFacturaRectificada;
     // @Column(name = "siImpresa")
     private Boolean siImpresa;
@@ -218,7 +217,7 @@ public class Tfactura implements Serializable {
     // @Column(name = "codeConditionPaiement")
     private String codeConditionPaiement;
 
-    public Tfactura() {
+    public TFactura() {
     }
 
     public String getZonaCliente() {

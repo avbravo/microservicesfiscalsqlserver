@@ -5,7 +5,6 @@
  */
 package com.avbravo.microservicesfiscalsqlserver.provider;
 
-
 import com.avbravo.jmoordbutils.JsfUtil;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,20 +21,22 @@ import javax.inject.Singleton;
 @Singleton
 @ConcurrencyManagement(ConcurrencyManagementType.CONTAINER)
 public class SQLServerProducer {
- Connection connectionClient=null;
+
+    Connection connectionClient = null;
+
     @Produces
     @ApplicationScoped
     public Connection connection() {
-      
+
         try {
-             if( connectionClient==null){
-                   Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "controljav180denver$");
-               
-             }
-            
+            if (connectionClient == null) {
+                Class.forName("net.sourceforge.jtds.jdbc.Driver");
+                connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "controljav180denver$");
+
+            }
+
         } catch (Exception e) {
-            JsfUtil.errorMessage("conecction() "+e.getLocalizedMessage());
+            JsfUtil.errorMessage("conecction() " + e.getLocalizedMessage());
         }
 
         return connectionClient;

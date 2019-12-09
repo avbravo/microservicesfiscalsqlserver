@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.avbravo</groupId>
     <artifactId>microservicesfiscalsqlserver</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
     <packaging>war</packaging>
     <name>microservicesfiscalsqlserver</name>
     
@@ -18,6 +18,11 @@
     </properties>
     
     <dependencies>
+         <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>1.7</version>
+        </dependency>
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbutils</artifactId>
