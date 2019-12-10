@@ -31,7 +31,7 @@ public class SQLServerProducer {
         try {
             if (connectionClient == null) {
                 Class.forName("net.sourceforge.jtds.jdbc.Driver");
-                connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "controljav180denver$");
+                connectionClient = connectionClient = DriverManager.getConnection("jdbc:jtds:sqlserver://localhost:1433/GRUPOMORENO;instance=SQLEXPRESS;", "sa", "denver16$");
 
             }
 
