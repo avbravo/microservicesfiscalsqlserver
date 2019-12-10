@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.microservicesfiscalsqlserver.sql.tables;
+package com.avbravo.microservicesfiscalsqlserver.sql.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.validation.constraints.Size;
+
 
 
 /**
@@ -66,12 +66,12 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "importeTexto")
     private String importeTexto;
-    @Size(max = 1)
+  
     // @Column(name = "tipo")
     private String tipo;
     // @Column(name = "cambio")
     private Double cambio;
-    @Size(max = 100)
+
     // @Column(name = "nombreClienteVarios")
     private String nombreClienteVarios;
     // @Column(name = "siImprimir")
@@ -81,7 +81,7 @@ public class TEfectosCobro implements Serializable {
     private String zonaAgente;
     // @Column(name = "codigoAgente")
     private Integer codigoAgente;
-    @Size(max = 10)
+
     // @Column(name = "codigoEfecto")
     private String codigoEfecto;
     
@@ -95,7 +95,7 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "agencia")
     private String agencia;
-    @Size(max = 4)
+  
     // @Column(name = "digitoControl")
     private String digitoControl;
     
@@ -123,10 +123,10 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "CAB")
     private String cab;
-    @Size(max = 1)
+
     // @Column(name = "CIN")
     private String cin;
-    @Size(max = 12)
+
     // @Column(name = "CC")
     private String cc;
     // @Column(name = "idTalon")
@@ -140,7 +140,7 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "importeTextoMenosACuenta")
     private String importeTextoMenosACuenta;
-    @Size(max = 3)
+
     // @Column(name = "sucursal")
     private String sucursal;
         
@@ -160,10 +160,10 @@ public class TEfectosCobro implements Serializable {
     
     // @Column(name = "codigoGrupo")
     private String codigoGrupo;
-    @Size(max = 10)
+  
     // @Column(name = "codigoEfectoAgrupado")
     private String codigoEfectoAgrupado;
-    @Size(max = 200)
+   
     // @Column(name = "facturaAgrupacion")
     private String facturaAgrupacion;
     // @Column(name = "idEfectoAgrupado")

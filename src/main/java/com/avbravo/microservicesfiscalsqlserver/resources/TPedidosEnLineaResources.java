@@ -7,7 +7,7 @@ package com.avbravo.microservicesfiscalsqlserver.resources;
 
 
 import com.avbravo.microservicesfiscalsqlserver.sql.repository.TPedidosEnLineaRepository;
-import com.avbravo.microservicesfiscalsqlserver.sql.tables.TPedidosEnLinea;
+import com.avbravo.microservicesfiscalsqlserver.sql.entity.TPedidosEnLinea;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;

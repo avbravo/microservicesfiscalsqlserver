@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.microservicesfiscalsqlserver.sql.tables;
+package com.avbravo.microservicesfiscalsqlserver.sql.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.Size;
+
 
 /**
  *
@@ -29,10 +27,10 @@ public class TPedidos implements Serializable {
     // @Column(name = "referencia")
     private String referencia;
     // @Column(name = "fecha_pedido")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaPedido;
     // @Column(name = "fecha_max")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaMax;
     
     // @Column(name = "forma_pago")
@@ -84,7 +82,7 @@ public class TPedidos implements Serializable {
     
     // @Column(name = "codigoModelo")
     private String codigoModelo;
-    @Size(max = 80)
+   
     // @Column(name = "observacionesTrans")
     private String observacionesTrans;
     // @Column(name = "puntos")
@@ -184,13 +182,13 @@ public class TPedidos implements Serializable {
     private Boolean siTimbre;
     // @Column(name = "cambioMonedaPresup")
     private Double cambioMonedaPresup;
-    @Size(max = 3)
+  
     // @Column(name = "sucursal")
     private String sucursal;
     // @Column(name = "ordenEmisionAlbaranes")
     private Integer ordenEmisionAlbaranes;
     // @Column(name = "fechaPedidoReal")
-    @Temporal(TemporalType.TIMESTAMP)
+  
     private Date fechaPedidoReal;
     
     // @Column(name = "codigoCausal")
@@ -235,7 +233,7 @@ public class TPedidos implements Serializable {
     // @Column(name = "siMontaje")
     private Boolean siMontaje;
     // @Column(name = "fechaMontaje")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaMontaje;
     
     // @Column(name = "horaMontaje")

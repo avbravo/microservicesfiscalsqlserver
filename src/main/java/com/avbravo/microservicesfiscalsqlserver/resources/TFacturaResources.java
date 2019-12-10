@@ -7,7 +7,7 @@ package com.avbravo.microservicesfiscalsqlserver.resources;
 
 
 import com.avbravo.microservicesfiscalsqlserver.sql.repository.TFacturaRepository;
-import com.avbravo.microservicesfiscalsqlserver.sql.tables.TFactura;
+import com.avbravo.microservicesfiscalsqlserver.sql.entity.TFactura;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;

@@ -7,7 +7,7 @@ package com.avbravo.microservicesfiscalsqlserver.resources;
 
 
 import com.avbravo.microservicesfiscalsqlserver.sql.repository.TEfectosCobroRepository;
-import com.avbravo.microservicesfiscalsqlserver.sql.tables.TEfectosCobro;
+import com.avbravo.microservicesfiscalsqlserver.sql.entity.TEfectosCobro;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;

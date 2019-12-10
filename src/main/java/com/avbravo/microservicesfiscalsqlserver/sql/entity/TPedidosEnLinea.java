@@ -3,13 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.avbravo.microservicesfiscalsqlserver.sql.tables;
+package com.avbravo.microservicesfiscalsqlserver.sql.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.Size;
 
 /**
  *
@@ -66,7 +63,7 @@ public class TPedidosEnLinea implements Serializable {
     private Double baseImponible;
     // @Column(name = "codigoPersiana")
     private Integer codigoPersiana;
-    @Size(max = 1)
+   
     // @Column(name = "tipoFactura")
     private String tipoFactura;
     // @Column(name = "anchuraFigura")
@@ -95,10 +92,10 @@ public class TPedidosEnLinea implements Serializable {
     // @Column(name = "comision")
     private Double comision;
     // @Column(name = "fechaservir")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaservir;
     // @Column(name = "fechaservido")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaservido;
     // @Column(name = "unidadprecio")
     private Short unidadprecio;
@@ -280,7 +277,7 @@ public class TPedidosEnLinea implements Serializable {
     // @Column(name = "idDireccionDescarga")
     private Integer idDireccionDescarga;
     // @Column(name = "fechaEntregaReal")
-    @Temporal(TemporalType.TIMESTAMP)
+
     private Date fechaEntregaReal;
     // @Column(name = "importeInstalacion")
     private Double importeInstalacion;

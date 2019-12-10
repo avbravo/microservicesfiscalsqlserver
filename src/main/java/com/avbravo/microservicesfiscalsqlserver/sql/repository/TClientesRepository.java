@@ -6,7 +6,7 @@
 package com.avbravo.microservicesfiscalsqlserver.sql.repository;
 
 import com.avbravo.jmoordbutils.JsfUtil;
-import com.avbravo.microservicesfiscalsqlserver.sql.tables.TClientes;
+import com.avbravo.microservicesfiscalsqlserver.sql.entity.TClientes;
 
 import com.avbravo.sqlserverapi.Repository;
 import java.sql.Connection;

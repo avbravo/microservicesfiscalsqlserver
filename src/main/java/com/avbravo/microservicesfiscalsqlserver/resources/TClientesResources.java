@@ -7,7 +7,7 @@ package com.avbravo.microservicesfiscalsqlserver.resources;
 
 
 import com.avbravo.microservicesfiscalsqlserver.sql.repository.TClientesRepository;
-import com.avbravo.microservicesfiscalsqlserver.sql.tables.TClientes;
+import com.avbravo.microservicesfiscalsqlserver.sql.entity.TClientes;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
