@@ -9,15 +9,12 @@ import com.avbravo.jmoordbutils.JsfUtil;
 import com.avbravo.microservicesfiscalsqlserver.entity.Factura;
 
 import com.avbravo.sqlserverapi.Repository;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
 /**
  *

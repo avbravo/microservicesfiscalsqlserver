@@ -10,6 +10,7 @@ package com.avbravo.microservicesfiscalsqlserver.entity;
  * @author avbravo
  */
 public class Factura {
+
     private Integer idfactura;
     private String cliente;
     private Integer estado;
@@ -22,8 +23,6 @@ public class Factura {
     public Factura() {
     }
 
-    
-    
     public Integer getIdfactura() {
         return idfactura;
     }
@@ -39,8 +38,5 @@ public class Factura {
     public void setEstado(Integer estado) {
         this.estado = estado;
     }
-    
-    
-    
-  
+
 }

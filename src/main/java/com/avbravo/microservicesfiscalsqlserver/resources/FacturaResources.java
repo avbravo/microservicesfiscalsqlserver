@@ -49,16 +49,15 @@ public class FacturaResources {
         return factura;
     }
 
-    
     @POST
-     @Path("{otrafactura}")
-@Consumes( MediaType.APPLICATION_JSON)
-@Produces( MediaType.APPLICATION_JSON)
-public Response findByIdfactura(@QueryParam("idfactura") Integer idfactura){
- 
-  Factura factura = new Factura();
+    @Path("{otrafactura}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findByIdfactura(@QueryParam("idfactura") Integer idfactura) {
+
+        Factura factura = new Factura();
         try {
-            Optional<Factura> optional = facturaRepository.findByIdfactura( idfactura); 
+            Optional<Factura> optional = facturaRepository.findByIdfactura(idfactura);
             if (optional.isPresent()) {
                 factura = optional.get();
             }
@@ -66,10 +65,9 @@ public Response findByIdfactura(@QueryParam("idfactura") Integer idfactura){
         } catch (Exception e) {
             System.out.println("Error find() " + e.getLocalizedMessage());
         }
-       return Response.ok().entity(factura).build();
-}
+        return Response.ok().entity(factura).build();
+    }
 
-    
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Factura> findAll() {
@@ -77,7 +75,6 @@ public Response findByIdfactura(@QueryParam("idfactura") Integer idfactura){
         return facturaRepository.findAll();
     }
 
-   
     @POST
     @Path("/factura/add")
     @Consumes(MediaType.APPLICATION_JSON)
